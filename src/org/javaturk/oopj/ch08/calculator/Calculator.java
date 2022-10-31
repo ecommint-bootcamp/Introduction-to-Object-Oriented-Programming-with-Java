@@ -9,6 +9,7 @@ package org.javaturk.oopj.ch08.calculator;
  *      </p>
  */
 public class Calculator {
+	//add first commit
 	String name;
 
 	public String getName() {
