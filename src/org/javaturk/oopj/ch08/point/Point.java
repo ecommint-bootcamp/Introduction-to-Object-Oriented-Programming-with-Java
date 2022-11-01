@@ -1,5 +1,7 @@
 package org.javaturk.oopj.ch08.point;
 
+import java.util.Objects;
+
 public class Point implements Cloneable {
     private int x;
     private int y;
@@ -23,6 +25,28 @@ public class Point implements Cloneable {
 
     public void setY(int y) {
         this.y = y;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Point point = (Point) o;
+        return x == point.x && y == point.y;
+    }
+
+    @Override // hashcode sor
+    public int hashCode() {
+        return Objects.hash(x, y);
+    }
+
+    @Override
+    public String toString() {
+        return "Point: " + "(" + x + "," + y + ")";
     }
 
     public double distanceToCenter() {

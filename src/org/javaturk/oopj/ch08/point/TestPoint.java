@@ -12,6 +12,9 @@ public class TestPoint {
         System.out.println("new coordinate p1: (" + p1.getX() + "," + p1.getY() + ")");
 
         Point pClone = p1.clone();
-        System.out.println(p1.getX() + " " + pClone.getX());
+        System.out.println("p1: (" + p1.getX() + ","+ p1.getY() + ") Clone p: (" + pClone.getX() + "," + pClone.getY() + ")");
+        System.out.println(p1.equals(pClone));
+        System.out.println(p2.toString());
+        System.out.println(p2.hashCode());
     }
 }
