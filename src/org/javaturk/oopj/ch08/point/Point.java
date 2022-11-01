@@ -1,5 +1,7 @@
 package org.javaturk.oopj.ch08.point;
 
+import java.util.Objects;
+
 public class Point {
 	private double x;
 	private double y;
@@ -44,5 +46,38 @@ public class Point {
 	public void move(double x, double y) {
 		this.x += x;
 		this.y += y;
+	}
+	
+	/*@Override
+	public boolean equals(Object o) {
+		if (this == o)
+			return true;
+		if (!(o instanceof Point))
+			return false;
+		
+		Point point = (Point) o;
+		
+		if (x == point.getX() && y == point.getY())
+			return true;
+		return false;
+	}*/
+	
+	@Override
+	public boolean equals(Object o) {
+		Point point = (Point) o;
+		
+		if (x == point.getX() && y == point.getY())
+			return true;
+		return false;
+	}
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(x, y);
+	}
+	
+	@Override
+	public String toString() {
+		return "Point x: " + x + ", y: " + y;
 	}
 }

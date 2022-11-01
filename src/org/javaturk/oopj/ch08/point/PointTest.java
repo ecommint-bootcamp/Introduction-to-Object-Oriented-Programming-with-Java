@@ -27,5 +27,18 @@ public class PointTest {
         System.out.println("---------------------");
         Point p3 = p1.clone();
         System.out.println("Point p3 X: " + p3.getX() + " Y: " + p3.getY());
+        
+        System.out.println("---------------------");
+        System.out.println("Is p1 equal to p3:  " + p1.equals(p3));
+        System.out.println("Is p1 equal to p2:  " + p1.equals(p2));
+        
+        System.out.println("---------------------");
+        System.out.println("p1 hashCode: " + p1.hashCode());
+        System.out.println("p3 hashCode: " + p3.hashCode());
+        System.out.println("p2 hashCode: " + p2.hashCode());
+        
+        System.out.println("---------------------");
+        System.out.println(p1.toString());
+        System.out.println(p2.toString());
 	}
 }
