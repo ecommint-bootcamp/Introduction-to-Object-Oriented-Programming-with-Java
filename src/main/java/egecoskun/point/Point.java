@@ -6,7 +6,7 @@ public class Point implements PointInterface{
     private double x;
     private double y;
 
-    public Point(int x, int y) {
+    public Point(double x, double y) {
         this.x = x;
         this.y = y;
     }
@@ -39,6 +39,9 @@ public class Point implements PointInterface{
         return (Double.compare(x,point.x)==0 && Double.compare(y,point.y)==0);
     }
 
+    public Point clone(){
+        return new Point(x,y);
+    }
     @Override
     public String toString() {
         return "Point x=" + x + ", y=" + y ;
