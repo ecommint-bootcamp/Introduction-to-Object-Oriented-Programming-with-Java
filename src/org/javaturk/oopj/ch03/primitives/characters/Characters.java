@@ -11,10 +11,6 @@ public class Characters {
 		System.out.println("Character: " + ch + " its numeric value: " + (int)ch);
 		ch = ' ';
 		System.out.println("Character: " + ch + " its numeric value: " + (int)ch);
-		ch = '₺';
-		System.out.println("Character: " + ch + " its numeric value: " + (int)ch);
-		ch = 'ğ';
-		System.out.println("Character: " + ch + " its numeric value: " + (int)ch);
 		ch = '\u0c2c';
 		System.out.println("Character: " + ch + " its numeric value: " + (int)ch);
 		ch = '\u2690';

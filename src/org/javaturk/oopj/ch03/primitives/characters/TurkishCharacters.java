@@ -8,7 +8,7 @@ package org.javaturk.oopj.ch03.primitives.characters;
  * @see <a href="http://www.selsoft.com.tr">http://www.selsoft.com.tr</a>
  *      </p>  
  */
-public class TurkishCharacters {
+/*public class TurkishCharacters {
 	public static void main(String[] args) {
 		int ı = 8;
 		int ğ = 3;
@@ -23,3 +23,4 @@ public class TurkishCharacters {
 		return ı * j;
 	}
 }
+*/
