@@ -41,17 +41,47 @@ public class Point implements  Cloneable{
 
     }
 
-    public Point clone() throws CloneNotSupportedException {
-        super.clone();
-        return new Point(x,y);
-    }
-
+  public Object clone(){
+      try {
+          return super.clone();
+      } catch (CloneNotSupportedException e) {
+          return new Point(this.x,this.y);
+      }
+  }
     public void move(int movementX, int movementY){
         x+=movementX;
         y+=movementY;
     }
 
-    public String getInfo() {
-        return "Point Info: " + "x= " + x + " y= " + y ;
+    public String toString() {
+        String s=new String();
+        s+="Point Info: "
+                + "x= " + x +
+                " y= " + y ;
+        return s;
     }
+
+    public boolean equals(Object o ){
+
+        if (o == this)
+            return  true;
+        if(!(o instanceof Point)){
+            return false;
+        }
+
+        Point other = (Point) o;
+
+        return this.x == other.x && this.y == other.y;
+    }
+
+    public int hashCode(){
+        int result= 21;
+        result = result*(x+y) + x + y;
+
+        return result;
+
+    }
+
 }
+
+
