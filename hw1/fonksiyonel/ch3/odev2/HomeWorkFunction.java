@@ -27,15 +27,18 @@ public class HomeWorkFunction implements MathFunction {
 		if (arg <= 0)
 			return 0;
 
-		int fibon[] = new int[(int) (arg + 1)];
-		fibon[0] = 0;
-		fibon[1] = 1;
-		int sum = fibon[0] + fibon[1];
-		for (int i = 2; i < arg; i++) {
-			fibon[i] = fibon[i - 1] + fibon[i - 2];
-			sum += fibon[i];
+		int fibo[] = new int[(int) (arg + 1)];
+		fibo[0] = 0;
+		fibo[1] = 1;
+
+		int sum = fibo[0] + fibo[1];
+
+		for (int i = 2; i <= arg; i++) {
+			fibo[i] = fibo[i - 1] + fibo[i - 2];
+			sum += fibo[i];
 		}
-		return (int) sum;
+
+		return sum;
 	}
 
 }
