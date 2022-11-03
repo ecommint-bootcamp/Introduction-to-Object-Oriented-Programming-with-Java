@@ -1,4 +1,5 @@
-package org.javaturk.oopj.hw1.Point;
+package org.javaturk.oopj.ch08.Point;
+
 
 public class Point {
 	
