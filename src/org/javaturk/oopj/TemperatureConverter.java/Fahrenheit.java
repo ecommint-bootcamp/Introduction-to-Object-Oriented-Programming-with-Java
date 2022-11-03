@@ -1,4 +1,4 @@
-package org.javaturk.oopj.TemperatureConverter;
+package org.javaturk.oopj.TemperatureConverter.java;
 
 public class Fahrenheit extends Unit{
 
