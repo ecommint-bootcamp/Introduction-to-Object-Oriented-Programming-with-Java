@@ -22,6 +22,9 @@ public class Test {
         
         Student student1 = new Student();
         student1.name = "Akin Kaldiroglu";
+
+        Classroom classroom1 = new Classroom();
+        classroom1.name = "Computer Science";
         
         // Head of Software Engineering department is Ahmet Arslan and consequently his department is Software Engineering.
         department1.head = professor1; 
