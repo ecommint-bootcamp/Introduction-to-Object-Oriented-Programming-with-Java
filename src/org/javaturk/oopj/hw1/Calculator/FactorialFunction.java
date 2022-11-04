@@ -8,11 +8,17 @@ public class FactorialFunction implements MathFunction {
 	}
 
 	@Override
-	public double calculate(double arg) {
+	public double calculate(double arg) throws Exception {
 		return calculateFactorial(arg);
 	}
 
-	private int calculateFactorial(double arg){
+	
+	private int calculateFactorial(double arg) throws Exception{
+		if(arg<0) {
+			throw new Exception("Faktoriyel negatif girilemez");
+		}
+		
+		
 		int k = (int) arg;
 		int factorial = 1;
 		

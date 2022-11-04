@@ -24,19 +24,22 @@ public class CalculatorT1 implements Calculator{
 //	}
 
 	@Override
-	public double doCalculation(String functionName, double arg) {
-		double result = 0.0;
-		boolean isFunctionFound = false;
-		for (MathFunction function : functions) {
-			if (functionName.equalsIgnoreCase(function.getName())) {
-				result = function.calculate(arg);
-				isFunctionFound = true;
+	public double doCalculation(String functionName, double arg) throws Exception {
+		
+			double result = 0.0;
+			boolean isFunctionFound = false;
+			for (MathFunction function : functions) {
+				if (functionName.equalsIgnoreCase(function.getName())) {
+					result = function.calculate(arg);
+					isFunctionFound = true;
+				}
 			}
-		}
-		if(!isFunctionFound)
-			System.out.println("No such function found!");
+			if(!isFunctionFound)
+				System.out.println("No such function found!");
 
-		return result;
+			return result;
+		
+				
 	}
 
 	@Override
