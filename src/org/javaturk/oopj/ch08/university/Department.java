@@ -63,16 +63,3 @@ public class Department {
     }
 
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Department other = (Department) obj;
-        return Arrays.equals(courses, other.courses) && Objects.equals(head, other.head)
-                && Objects.equals(name, other.name) && Arrays.equals(students, other.students);
-    }
-}
