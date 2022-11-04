@@ -1,22 +1,22 @@
 package egecoskun.student;
 
+import java.util.*;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 
 public class RegistrationOffice {
     DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+    List<Student> studentList;
 
     public RegistrationOffice() {
+        studentList = new ArrayList<>();
     }
 
     public Student getAStudent(){
-
-
-        return registerStudent(new UnderGraduateStudent(1,"Ege",2020,new Date(1998, Calendar.MARCH,1),"Software Engineering","Highc"));
+        return studentList.get((int)Math.random()*10);
     }
-    public Student registerStudent(Student student){
-
-        return student;
+    public void registerStudent(Student student){
+        studentList.add(student);
     }
 }
