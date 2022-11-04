@@ -9,8 +9,70 @@ package org.javaturk.oopj.ch08.university;
  *      </p>
  */
 public class Department {
-    String name;
-    Professor head;
-    Course[] courses;
-    Student[] students;
+    private  String name;
+    private  Professor head;
+    private Course[] courses;
+    private  Student[] students;
+
+    public Department(String name, Professor head, Course[] courses, Student[] students) {
+        this.name = name;
+        this.head = head;
+        this.courses = courses;
+        this.students = students;
+    }
+
+    public Department() {
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Professor getHead() {
+        return head;
+    }
+
+    public void setHead(Professor head) {
+        this.head = head;
+    }
+
+    public Course[] getCourses() {
+        return courses;
+    }
+
+    public void setCourses(Course[] courses) {
+        this.courses = courses;
+    }
+
+    public Student[] getStudents() {
+        return students;
+    }
+
+    public void setStudents(Student[] students) {
+        this.students = students;
+    }
+
+    @Override
+    public String toString() {
+        return "Department [name=" + name + ", head=" + head + ", courses=" + Arrays.toString(courses) + ", students="
+                + Arrays.toString(students) + "]";
+    }
+
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Department other = (Department) obj;
+        return Arrays.equals(courses, other.courses) && Objects.equals(head, other.head)
+                && Objects.equals(name, other.name) && Arrays.equals(students, other.students);
+    }
 }
