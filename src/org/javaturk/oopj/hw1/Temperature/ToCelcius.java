@@ -1,6 +1,6 @@
 package org.javaturk.oopj.hw1.Temperature;
 
-public class ToCelsius implements Calculator{
+public class ToCelcius implements Calculator{
 
 	@Override
 	public Unit calculate(Unit value) {

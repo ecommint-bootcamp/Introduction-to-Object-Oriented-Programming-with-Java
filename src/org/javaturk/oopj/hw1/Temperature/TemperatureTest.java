@@ -5,23 +5,27 @@ public class TemperatureTest {
 	public static void main(String[] args) {
 		
 		ToFahrenheit toFahrenheit= new ToFahrenheit();
-		ToCelsius toCelcius= new ToCelsius();
+		ToCelcius toCelcius= new ToCelcius();
 		ToKelvin toKelvin= new ToKelvin();
 		
 		
 		Kelvin kelvin1= new Kelvin(10);
-		Kelvin kelvin2= new Kelvin(10);
+		
 
 		Fahrenheit fahrenheit1=new Fahrenheit(35);
-		Fahrenheit fahrenheit2=new Fahrenheit(35);
-		
-		Celcius celisus1= new Celcius(50);
-		Celcius celisus2= new Celcius(50);
 		
 		
+		Celcius celcius1= new Celcius(50);
 		
-		System.out.println(toFahrenheit.calculate(celisus1).getValue());
 		
+		System.out.println(celcius1.getValue() +" Celcius to Fahrenheit : "+toFahrenheit.calculate(celcius1).getValue());
+		System.out.println(kelvin1.getValue() +" Kelvin to Fahrenheit : "+toFahrenheit.calculate(kelvin1).getValue());
+		
+		System.out.println(fahrenheit1.getValue() +" Fahrenheit to Kelvin : "+toKelvin.calculate(fahrenheit1).getValue());
+		System.out.println(celcius1.getValue() +" Celcius to Kelvin : "+toKelvin.calculate(celcius1).getValue());
+		
+		System.out.println(fahrenheit1.getValue() +" Fahrenheit to Celcius : "+toCelcius.calculate(fahrenheit1).getValue());
+		System.out.println(kelvin1.getValue() +" Kelvin to Celcius : "+toCelcius.calculate(kelvin1).getValue());
 		
 	}
 
