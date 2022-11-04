@@ -19,17 +19,19 @@ public class CalculatorT1 implements Calculator{
 		currentCount++;
 	}
 
-//	public void doCalculation(MathFunction function, double arg) {
-//		System.out.println(function.getName() + "(" + arg + ") = " + function.calculate(arg));
-//	}
-
 	@Override
 	public double doCalculation(String functionName, double arg) {
 		double result = 0.0;
 		boolean isFunctionFound = false;
 		for (MathFunction function : functions) {
 			if (functionName.equalsIgnoreCase(function.getName())) {
-				result = function.calculate(arg);
+				try {
+					result = function.calculate(arg);
+
+				} catch (Exception e) {
+					throw new IllegalArgumentException();
+				}
+
 				isFunctionFound = true;
 			}
 		}
