@@ -1,5 +1,7 @@
 package javaturk.oopj.ch08.hw1;
 
+import java.util.Objects;
+
 class Point {
 
     private Integer x;
@@ -41,6 +43,27 @@ class Point {
         point.setX(x + k);
         Integer addtionalCoordinatX = point.getX();
         System.out.println(addtionalCoordinatX);
+    }
+
+    @Override
+    public String toString() {
+        return "Point{" +
+                "x=" + x +
+                ", y=" + y +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Point point = (Point) o;
+        return Objects.equals(x, point.x) && Objects.equals(y, point.y);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(x, y);
     }
 }
 
