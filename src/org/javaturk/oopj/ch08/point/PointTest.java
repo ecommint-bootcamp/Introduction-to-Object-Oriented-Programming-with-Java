@@ -18,8 +18,6 @@ public class PointTest {
 		
 		pointClone.move(5, 1);
 		System.out.println("The pointClone after moving: " + pointClone.toString());;
-		
-		
 
 	}
 
