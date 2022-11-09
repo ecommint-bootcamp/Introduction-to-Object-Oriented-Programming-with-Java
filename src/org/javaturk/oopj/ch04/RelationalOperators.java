@@ -36,13 +36,13 @@ public class RelationalOperators {
 		prt("a > x is " + (c1 > c2));
 		prt("a < x is " + (c1 < c2));
 		
-		/*c1 = 's';
+		c1 = 's';
 		c2 = 'ğ';
 		prt("s > ğ is " + (c1 > c2));
 		
 		c1 = 'ü'; // 0x00FC
 		c2 = 'ı'; // 0x0131
-		prt("ü < ı is " + (c1 < c2));*/
+		prt("ü < ı is " + (c1 < c2));
 
 		System.out.println();
 		
