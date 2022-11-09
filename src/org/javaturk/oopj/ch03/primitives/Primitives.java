@@ -32,7 +32,10 @@ public class Primitives {
 		char sex;
 
 		int _count;
-		
+		float $amount;
+		float €total;
+		double £Sales;
+		double ₺accruedInterest;
 
 		// Wrong naming
 		// float x!;
