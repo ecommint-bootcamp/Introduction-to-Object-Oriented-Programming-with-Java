@@ -1,0 +1,40 @@
+<?HomeWorkSpring.xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+		http://www.springframework.org/schema/beans	
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="calculatorT1"
+          class="HomeWorkSpring.xml.CalculatorT1">
+        <constructor-arg name="functionCount" value="5"/>
+        <property name="function">
+            <list>
+                <ref bean="cosFunc"/>
+                <ref bean="sinFunc"/>
+                <ref bean="logFunc"/>
+                <ref bean="factorialFunc"/>
+                <ref bean="squaredFunc"/>
+
+            </list>
+        </property>
+    </bean>
+    <bean id="cosFunc" class="HomeWorkSpring.xml.CosFunction">
+    </bean>
+
+    <bean id="sinFunc" class="HomeWorkSpring.xml.SinFunction">
+    </bean>
+
+    <bean id="logFunc" class="HomeWorkSpring.xml.LogFunction">
+    </bean>
+
+    <bean id="factorialFunc" class="HomeWorkSpring.xml.FactorialFunction">
+    </bean>
+
+    <bean id="squaredFunc" class="HomeWorkSpring.xml.SquaredFunction">
+    </bean>
+
+
+</beans>
