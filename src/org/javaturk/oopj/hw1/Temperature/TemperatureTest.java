@@ -1,31 +1,42 @@
 package org.javaturk.oopj.hw1.Temperature;
 
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 public class TemperatureTest {
 
 	public static void main(String[] args) {
 		
-		ToFahrenheit toFahrenheit= new ToFahrenheit();
-		ToCelcius toCelcius= new ToCelcius();
-		ToKelvin toKelvin= new ToKelvin();
+		ClassPathXmlApplicationContext context =
+				new ClassPathXmlApplicationContext("org/javaturk/oopj/hw1/applicationContext.xml");
 		
 		
-		Kelvin kelvin1= new Kelvin(10);
+		Converter kelvinCalculator = context.getBean("kelvin",Converter.class);
+		Converter fahrenheitCalculator = context.getBean("fahrenheit",Converter.class);
+		Converter celciusCalculator = context.getBean("celcius",Converter.class);
 		
-
-		Fahrenheit fahrenheit1=new Fahrenheit(35);
+		context.close();
+		
+			
+		//first unit
+		Unit unit= new Celcius(50);
+		System.out.println(unit.getValue() +" Celcius");
 		
 		
-		Celcius celcius1= new Celcius(50);
+		//celcius to fahrenheit -- unit refer to fahrenheit
+		unit=unit.convert(fahrenheitCalculator);
+		System.out.println("Celcius to Fahrenheit : "+unit.getValue());
+		
+		// fahreneit to kelvin -- unit refer to fahrenheit
+		unit=unit.convert(kelvinCalculator);
+		System.out.println("Fahrenheit to Kelvin : "+unit.getValue());
 		
 		
-		System.out.println(celcius1.getValue() +" Celcius to Fahrenheit : "+toFahrenheit.calculate(celcius1).getValue());
-		System.out.println(kelvin1.getValue() +" Kelvin to Fahrenheit : "+toFahrenheit.calculate(kelvin1).getValue());
+		// kelvin to celcius -- unit refer to fahrenheit
+		unit=unit.convert(celciusCalculator);
+		System.out.println("Kelvin to Celcius : "+unit.getValue());
 		
-		System.out.println(fahrenheit1.getValue() +" Fahrenheit to Kelvin : "+toKelvin.calculate(fahrenheit1).getValue());
-		System.out.println(celcius1.getValue() +" Celcius to Kelvin : "+toKelvin.calculate(celcius1).getValue());
 		
-		System.out.println(fahrenheit1.getValue() +" Fahrenheit to Celcius : "+toCelcius.calculate(fahrenheit1).getValue());
-		System.out.println(kelvin1.getValue() +" Kelvin to Celcius : "+toCelcius.calculate(kelvin1).getValue());
+		
 		
 	}
 

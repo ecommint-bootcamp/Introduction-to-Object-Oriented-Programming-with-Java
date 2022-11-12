@@ -1,19 +1,21 @@
 package org.javaturk.oopj.hw1.Temperature;
 
-public class ToCelcius implements Calculator{
+public class ToCelcius implements Converter{
 
 	@Override
 	public Unit calculate(Unit value) {
 		
 		double newValue=0;
+		
 		if(value instanceof Kelvin) {
-			newValue=((value.getValue()- 273.15)*9/5 + 32);
+			newValue=value.getValue()-273.15;
 		}
 		else if(value instanceof Fahrenheit) {
-			newValue=(value.getValue()-32*(9/5));
+			newValue=((((value.getValue()-32)*5)/9));
 		}
 		
-		Unit x= new Fahrenheit(newValue);
+		Celcius x =new Celcius(newValue);
+		
 		return x;
 		
 		

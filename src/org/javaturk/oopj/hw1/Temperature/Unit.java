@@ -2,7 +2,7 @@ package org.javaturk.oopj.hw1.Temperature;
 
 public abstract class Unit {
 	
-	private double value;
+	protected double value;
 
 	public Unit(double value) {
 		super();
@@ -15,6 +15,11 @@ public abstract class Unit {
 
 	public void setValue(double value) {
 		this.value = value;
+	}
+	
+	
+	public Unit convert(Converter calculator) {		
+		return calculator.calculate(this);
 	}
 
 }
