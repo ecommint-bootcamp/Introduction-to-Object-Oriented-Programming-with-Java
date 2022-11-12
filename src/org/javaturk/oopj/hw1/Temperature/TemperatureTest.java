@@ -26,12 +26,12 @@ public class TemperatureTest {
 		unit=unit.convert(fahrenheitCalculator);
 		System.out.println("Celcius to Fahrenheit : "+unit.getValue());
 		
-		// fahreneit to kelvin -- unit refer to fahrenheit
+		// fahreneit to kelvin -- unit refer to kelvin
 		unit=unit.convert(kelvinCalculator);
 		System.out.println("Fahrenheit to Kelvin : "+unit.getValue());
 		
 		
-		// kelvin to celcius -- unit refer to fahrenheit
+		// kelvin to celcius -- unit refer to celcius
 		unit=unit.convert(celciusCalculator);
 		System.out.println("Kelvin to Celcius : "+unit.getValue());
 		
