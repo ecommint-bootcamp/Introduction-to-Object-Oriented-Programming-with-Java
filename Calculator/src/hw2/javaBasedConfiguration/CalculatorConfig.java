@@ -16,13 +16,6 @@ public class CalculatorConfig {
 	
 	
 	@Bean
-    public MathFunction[] getMathFunction() {
-
-        return new MathFunction[] {};
-	
-	}	
-	
-	@Bean
 	public SinFunction getSinFunction() {
 		
 		return new SinFunction();
