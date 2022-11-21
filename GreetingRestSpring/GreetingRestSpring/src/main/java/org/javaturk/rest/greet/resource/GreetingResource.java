@@ -143,7 +143,7 @@ public class GreetingResource {
 			} 
 			else{
 				if (repo.replaceGreeting(greeting1)) {
-					return ResponseEntity.ok().build();
+					return new ResponseEntity<>("Greeting updated",HttpStatus.OK);
 				} 
 				else{
 					return ResponseEntity.status(409).body("A problem occurred during replacement!");
@@ -161,9 +161,7 @@ public class GreetingResource {
 	@DeleteMapping("{language}")
 	public ResponseEntity<?> deleteGreeting(@PathParam("language") String language) {
 		if (repo.deleteGreeting(language)) {
-			return ResponseEntity.status(200).body("Resource with language " + language + " has been deleted.");
-		  //return new ResponseEntity<>("Resource with language " + language + " has been deleted.", HttpStatus.OK);
-
+			return new ResponseEntity<>("Resource with language " + language + " has been deleted.", HttpStatus.OK);
 		}
 		else
 			return ResponseEntity.status(409).body("No such language found: " + language);
