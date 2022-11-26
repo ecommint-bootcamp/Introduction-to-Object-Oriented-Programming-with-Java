@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id = "cosFunction" class = "xml.CosFunction"/>
+    <bean id = "sinFunction" class = "xml.SinFunction"/>
+    <bean id = "squaredFunction" class = "xml.SquaredFunction"/>
+    <bean id = "factorialFunction" class="xml.FactorialFunction"/>
+    <bean id = "logFunction" class="xml.LogFunction"/>
+
+
+    <bean id="calculatorT1" class="xml.CalculatorT1">
+        <constructor-arg name = "functionCount" value = "5"/>
+        <property name = "functions">
+            <list>
+                <ref bean = "cosFunction"/>
+                <ref bean = "sinFunction"/>
+                <ref bean = "squaredFunction"/>
+                <ref bean = "factorialFunction"/>
+                <ref bean = "logFunction"/>
+            </list>
+        </property>
+    </bean>
+
+</beans>
