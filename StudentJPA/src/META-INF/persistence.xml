@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+	version="2.1">
+
+	
+	<persistence-unit name="student"
+		transaction-type="RESOURCE_LOCAL">
+
+		<class>hw4.domain.Student</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		
+	</persistence-unit>
+	
+	
+	<persistence-unit name="student2"
+		transaction-type="RESOURCE_LOCAL">
+
+		<class>hw4.domain.Student</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+		<properties>
+
+			<!-- MySQL -->
+			<property name="javax.persistence.jdbc.driver"
+				value="com.mysql.cj.jdbc.Driver" />
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:mysql://localhost:3307/JPA?useSSL=false&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC" />
+			<property name="javax.persistence.jdbc.user" value="root" />
+			<property name="javax.persistence.jdbc.password"
+				value="Burak" />
+
+<!-- 			<property name="javax.persistence.schema-generation.database.action" value="create" /> -->
+			<!-- none, create, drop-and-create, drop’ -->
+
+			<!-- LOGGING -->
+			 <property name="eclipselink.logging.level" value="FINE" /> 
+			 <property name="eclipselink.logging.level.sql" value="FINE" /> 
+			 <property name="eclipselink.logging.parameters" value="true" /> 
+
+			<!-- https://wiki.eclipse.org/EclipseLink/Examples/JPA/Logging -->
+
+		</properties>
+	</persistence-unit>
+	
+</persistence>
+
+
